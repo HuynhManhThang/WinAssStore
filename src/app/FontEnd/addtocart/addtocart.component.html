@@ -1,0 +1,96 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-center">Add to cart</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"  routerLink="/index/home">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="product">
+          <!-- <div class="form-group">
+            <label class="col-form-label">Are you sure you want to add to cart</label>
+            <input type="hidden" class="form-control"  name="name"    [(ngModel)]="product.name">
+            <input type="hidden" class="form-control"  name="discout"    [(ngModel)]="product.discout">
+            <input type="hidden" class="form-control"  name="desc"    [(ngModel)]="product.desc">
+            <ul class="pricing-content">
+              <li>Product name:{{product.name}}</li>
+              <li>Type:{{product.type}}</li>
+              <li>Price :{{product.price}}</li>
+              <li>Discout: {{product.discout}}</li>
+              <li>Description: {{product.desc}}</li>
+            </ul>
+          </div> -->
+
+          <div class="col-md-6 col-lg-6">
+
+            <!-- <div class="form-group">
+                <label >Product Type</label>
+                <input type="text" class="form-control" id="type" placeholder="Product Type" >
+              </div> -->
+            <div class="form-group">
+              <label>Product Type</label>
+              <select class="form-control" id="type" [(ngModel)]="product.type" required>
+                <option value="New Mobile">New Mobile</option>
+                <option value="Live New 99%">Live New 99%</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Product Name"
+                [(ngModel)]="product.name" required>
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input type="number" class="form-control" id="price" placeholder="Price" [(ngModel)]="product.price"
+                required>
+            </div>
+            <div class="form-group">
+              <label>Discout</label>
+              <input type="number" class="form-control" id="discout" placeholder="Discout"
+                [(ngModel)]="product.discout" required>
+            </div>
+            <div class="form-group">
+              <label>Guarantee</label>
+              <select class="form-control" id="type" [(ngModel)]="product.guarantee" required>
+                <option value="6 month">6 month</option>
+                <option value="12 month">12 month</option>
+                <option value="16 month">16 month</option>
+                <option value="18 month">18 month</option>
+
+              </select>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <div class="form-group">
+              <label>Images Url</label>
+              <input type="text" class="form-control" id="img" placeholder="Ảnh Trưng Bày(192x192)..."
+                [(ngModel)]="product.img" required>
+              <input type="text" class="form-control" id="img" placeholder="Ảnh Detail(546x546)..."
+                [(ngModel)]="product.imgdetail" required>
+              <img src="{{product.img}}" width="150px" height="150px" class="zoom" alt="Ảnh trưng bày (192x192)">
+              <img src="{{product.imgdetail}}" width="150px" height="150px" class="zoom1"
+                alt="Ảnh Chi tiết (546x546)">
+            </div>
+            <!-- <div class="form-group">
+              <label for="exampleFormControlFile1">Images chooses</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div> -->
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" id="desc" rows="5" [(ngModel)]="product.desc" required>
+
+              </textarea>
+            </div>
+          </div>
+          <div class="btn-group sub-w3l">
+            <button class="btn btn-outline-danger" (click)="addtocart()" data-dismiss="modal">Yes</button>
+            <button class="btn btn-outline-info" data-dismiss="modal" aria-label="Close" routerLink="/index/home">No</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="modal fade" id="ProductDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header no-bd">
+        <h5 class="modal-title">
+          <span class="fw-mediumbold">
+          Product Detail
+          </span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" routerLink="/admin/managerPoduct">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="product">
+        <div class="col-md-12 pl-md-0">
+          <div class="card-pricing2">
+            <img  src="{{product.imgdetail}}" data-imagezoom="true" style="width: 437px;border-radius: 5%; box-shadow: 2px 2px 2px 2px rgb(152, 243, 255);">
+            <div class="price-value">
+              <div class="value">
+                <span class="currency">$</span>
+                <span class="amount"><span>{{product.discout}}</span></span>
+                <span class="month"><del>{{product.price}}</del></span>
+              </div>
+            </div>
+            <ul class="pricing-content">
+              <li>Product name:{{product.name}}</li>
+              <li>Type:{{product.type}}</li>
+              <li>Price :{{product.price}}</li>
+              <li>Discout: {{product.discout}}</li>
+              <li>Description: {{product.desc}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer no-bd">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" routerLink="/admin/managerPoduct">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

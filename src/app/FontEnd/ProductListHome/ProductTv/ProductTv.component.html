@@ -1,0 +1,54 @@
+<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4 pt-4">
+  <h3 class="heading-tittle text-center font-italic">Liquidation Discount</h3>
+  <div class="row">
+    <div class="col-md-3 product-men mt-5" *ngFor="let prod of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+      <div class="men-pro-item simpleCart_shelfItem">
+        <div class="men-thumb-item text-center">
+          <img class="zoom" src="{{prod.img}}" width="200" height="200" style="border-radius:5% ;" alt="Ảnh">
+          <div class="men-cart-pro">
+            <div class="inner-men-cart-pro">
+              <a routerLink="/index/detail/{{prod.id}}" class="link-product-add-cart">Preview</a>
+            </div>
+          </div>
+          <span class="product-new-top">-30%</span>
+        </div>
+        <div class="item-info-product text-center border-top mt-4">
+          <h4 class="pt-1">
+            <!-- <a routerLink="/index/detail/{{product.id}}">{{product.name}}</a> -->
+            <input  maxlength="15" disabled style="font-size: 16px;"  class="form-control-plaintext pl-4" value="{{prod.name}}">
+          </h4>
+          <div class="info-product-price my-2">
+            <span class="item_price">${{prod.discout}}</span>
+            <del>${{prod.price}}</del>
+          </div>
+          <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+            <!-- <form action="#" method="post">
+              <fieldset>
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="add" value="1" />
+                <input type="hidden" name="business" value=" " />
+                <input type="hidden" name="item_name" value="Samsung Galaxy J7" />
+                <input type="hidden" name="amount" value="200.00" />
+                <input type="hidden" name="discount_amount" value="1.00" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="return" value=" " />
+                <input type="hidden" name="cancel_return" value=" " />
+                <input type="submit" name="submit" value="Add to cart" class="button btn" />
+              </fieldset>
+            </form> -->
+            <div class="btn-group">
+              <a routerLink="/index/addtocart/{{prod.id}}">
+                <button class="btn btn-outline-danger"  data-toggle="modal"  data-target="#exampleModal">
+                  Add to cart
+                </button>
+              </a>
+              <button class="btn btn-outline-info"  routerLink="/index/detail/{{prod.id}}" routerLinkActive="active">Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="align-content-center pt-2">
+  </div>
+</div>

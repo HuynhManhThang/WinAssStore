@@ -1,0 +1,97 @@
+<div class="main-panel">
+  <div class="content">
+    <div class="page-inner">
+      <div class="page-header">
+        <h4 class="page-title">Welcome Manager Memmber</h4>
+        <ul class="breadcrumbs">
+          <li class="nav-home">
+            <a routerLink="/admin/dashboardMemmber">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/managerMemmber">List Memmber</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="d-flex align-items-center">
+                <h4 class="card-title">List Memmber</h4>
+                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal" >
+                 <a routerLink="/admin/addMemmber" style="color: white;"><i class="fa fa-plus"></i>
+                  Add Memmber
+                  </a>
+
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Modal -->
+<app-PreviewMemmber></app-PreviewMemmber>
+<app-deleteMemmber></app-deleteMemmber>
+              <div class="table-responsive">
+                <table id="add-row" class="display table table-striped table-hover" >
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Firt name</th>
+                      <th>Last name</th>
+                      <th>Gender</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th style="width: 10%"></th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>No.</th>
+                      <th>Firt name</th>
+                      <th>Last name</th>
+                      <th>Gender</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td >1</td>
+                      <td >2</td>
+                      <td >3</td>
+                      <td >4</td>
+                      <td >5</td>
+                      <td>6</td>
+
+                      <td>
+                        <div class="form-button-action">
+
+                          <button type="button" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#DeleteMemmberMoDal">
+                            <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" class="btn btn-link btn-primary btn-lg" data-original-title="Remove">
+                            <i class="fa fa-copy"></i>
+                          </button>
+                          <button type="button" title="" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#MemmberDetailModal">
+                            <i class="fa fa-eye"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

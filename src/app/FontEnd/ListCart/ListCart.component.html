@@ -1,0 +1,116 @@
+<!-- banner-2 -->
+<div class="page-head_agile_info_w3l">
+
+</div>
+<!-- //banner-2 -->
+<!-- page -->
+<div class="services-breadcrumb">
+  <div class="agile_inner_breadcrumb">
+    <div class="container">
+      <ul class="w3_short">
+        <li>
+          <a routerLink="/index/home"><i class="fas fa-home">Home</i></a>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="privacy py-sm-5 py-4">
+  <div class="container py-xl-4 py-lg-2">
+    <div class="checkout-right">
+      <h4 class="mb-sm-4 mb-3">Your shopping cart contains:
+        <span>3 Products</span>
+      </h4>
+      <div class="container">
+        <div class="card"  style="background: rgb(240, 214, 214);">
+          <table class="table">
+            <input type="checkbox" onclick="toggle(this)"  class="ml-3 mt-3" style="width: 20px;height:20px;">
+            Image
+            <th scope="col">Name</th>
+            <th scope="col" style="text-align: center;">Type</th>
+            <th scope="col" style="text-align: center;">Price</th>
+            <th scope="col" style="text-align: center;">Action</th>
+
+          </table>
+        </div>
+      </div>
+      <div class="container pt-1 pb-1" *ngFor="let cart of carts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <div class="card">
+          <div  style="background: rgb(235, 219, 219);">
+          <input type="checkbox" name="checkall" class="ml-3 mt-3" style="width: 20px;height:20px;">
+          Choose to buy the product
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td><img class="zoom" src="{{cart.img}}" alt="Ảnh" width="100" height="100"></td>
+                  <td style="font-size: large;">{{cart.name}}</td>
+                  <td style="font-size: large;">{{cart.type}}</td>
+                  <td style="font-size: large;">{{cart.discout}}</td>
+                  <td>
+                    <div style="text-align: center;">
+                      <button class="btn btn-outline-success" (click)="removeItem(cart.id)">
+                        <i class="fa fa-times" ngbTooltip="Remove"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="carts.length"></ngb-pagination>
+    </div>
+    <div class="checkout-left">
+      <div class="address_form_agile mt-sm-5 mt-4">
+        <h4 class="mb-sm-4 mb-3">Add a new Details</h4>
+        <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+          <div class="creditly-wrapper wthree, w3_agileits_wrapper">
+            <div class="information-wrapper">
+              <div class="first-row">
+                <div class="controls form-group">
+                  <input class="billing-address-name form-control" type="text" name="name" placeholder="Full Name" required="">
+                </div>
+                <div class="w3_agileits_card_number_grids">
+                  <div class="w3_agileits_card_number_grid_left form-group">
+                    <div class="controls">
+                      <input type="text" class="form-control" placeholder="Mobile Number" name="number" required="">
+                    </div>
+                  </div>
+                  <div class="w3_agileits_card_number_grid_right form-group">
+                    <div class="controls">
+                      <input type="text" class="form-control" placeholder="Landmark" name="landmark" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="controls form-group">
+                  <input type="text" class="form-control" placeholder="Town/City" name="city" required="">
+                </div>
+                <div class="controls form-group">
+                  <select class="option-w3ls">
+                    <option>Select Address type</option>
+                    <option>Office</option>
+                    <option>Home</option>
+                    <option>Commercial</option>
+
+                  </select>
+                </div>
+              </div>
+              <button class="submit check_out btn">Delivery to this Address</button>
+            </div>
+          </div>
+        </form>
+        <div class="checkout-right-basket">
+          <a href="payment.html">Make a Payment
+            <span class="far fa-hand-point-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

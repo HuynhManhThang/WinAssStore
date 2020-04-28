@@ -1,0 +1,154 @@
+<div class="main-panel">
+  <div class="content">
+    <div class="page-inner">
+      <div class="page-header">
+        <h4 class="page-title">Welcome Manager Memmber</h4>
+        <ul class="breadcrumbs">
+          <li class="nav-home">
+            <a routerLink="/admin/dashboardMemmber">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/managerMemmber">List Memmber</a>
+          </li>
+          <li class="separator">
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/addMemmber">Add Memmber</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Add Memmber</div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label >Firt Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Firt Name">
+                  </div>
+                  <div class="form-group">
+                    <label >Last Name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                  </div>
+
+                  <div class="form-check">
+                    <label>Gender</label><br/>
+                    <label class="form-radio-label">
+                      <input class="form-radio-input" type="radio" name="optionsRadios" value=""  checked="">
+                      <span class="form-radio-sign">Male</span>
+                    </label>
+                    <label class="form-radio-label ml-3">
+                      <input class="form-radio-input" type="radio" name="optionsRadios" value="">
+                      <span class="form-radio-sign">Female</span>
+                    </label>
+                  </div>
+
+
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label >PassWord</label>
+                  <input type="password" class="form-control" id="email2" placeholder="PassWord">
+                </div>
+                <div class="form-group">
+                  <label >User Name</label>
+                  <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label >Email</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">@example.com</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="card-action">
+              <button class="btn btn-success">Submit</button>
+              <button class="btn btn-danger">Cancel</button>
+            </div>
+            <!-- <div class="container">
+
+              <h1>Template-Driven Form</h1>
+              <form #heroForm="ngForm">
+                <div [hidden]="heroForm.submitted">
+
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" class="form-control"
+                           required minlength="4" appForbiddenName="bob"
+                           [(ngModel)]="hero.name" #name="ngModel" >
+
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                         class="alert alert-danger">
+
+                      <div *ngIf="name.errors.required">
+                        Name is required.
+                      </div>
+                      <div *ngIf="name.errors.minlength">
+                        Name must be at least 4 characters long.
+                      </div>
+                      <div *ngIf="name.errors.forbiddenName">
+                        Name cannot be Bob.
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="alterEgo">Alter Ego</label>
+                    <input id="alterEgo" class="form-control"
+                           name="alterEgo" [(ngModel)]="hero.alterEgo" >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="power">Hero Power</label>
+                    <select id="power" name="power" class="form-control"
+                            required [(ngModel)]="hero.power" #power="ngModel" >
+                      <option *ngFor="let p of powers" [value]="p">{{p}}</option>
+                    </select>
+
+                    <div *ngIf="power.errors && power.touched" class="alert alert-danger">
+                      <div *ngIf="power.errors.required">Power is required.</div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-default"
+                          [disabled]="heroForm.invalid">Submit</button>
+                  <button type="button" class="btn btn-default"
+                          (click)="heroForm.resetForm({})">Reset</button>
+                </div>
+
+                <div class="submitted-message" *ngIf="heroForm.submitted">
+                  <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+                  <button (click)="heroForm.resetForm({})">Add new hero</button>
+                </div>
+              </form>
+
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
